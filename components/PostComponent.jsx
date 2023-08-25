@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 
   nameText: {
     marginBottom: 8,
-    fontFamily: "Roboto-Bold",
+    fontFamily: "Roboto-Medium",
     fontSize: 16,
     lineHeight: 18.75,
     color: "#212121",

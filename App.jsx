@@ -14,11 +14,14 @@ import LoginScreen from "./Screens/LoginScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "./Screens/Home";
+import CommentsScreen from "./Screens/CommentsScreen";
+import { ToBackComponent } from "./components/ToBackComponent";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    "Roboto-Bold": require("./assets/fonts/Roboto-Bold.ttf"),
     "Roboto-Regular": require("./assets/fonts/Roboto-Regular.ttf"),
+    "Roboto-Medium": require("./assets/fonts/Roboto-Medium.ttf"),
+    "Roboto-Bold": require("./assets/fonts/Roboto-Bold.ttf"),
   });
 
   if (!fontsLoaded) {
@@ -44,6 +47,27 @@ export default function App() {
           name="Login"
           component={LoginScreen}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Comments"
+          component={CommentsScreen}
+          options={{
+            title: "Коментарі",
+            headerTitleAlign: "center",
+            headerShown: true,
+            headerLeft: () => <ToBackComponent />,
+            headerStyle: {
+              borderBottomWidth: 1,
+            },
+            headerTitleStyle: {
+              color: "#212121",
+              fontSize: 17,
+              fontWeight: 500,
+              lineHeight: 22,
+              letterSpacing: -0.4,
+              fontFamily: "Roboto-Medium",
+            },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

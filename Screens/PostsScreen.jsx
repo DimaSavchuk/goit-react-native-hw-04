@@ -1,4 +1,4 @@
-import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
+import { View, Text, ScrollView, StyleSheet } from "react-native";
 import React from "react";
 import { globalStyles } from "../components/styles/globalStyles";
 
@@ -6,13 +6,16 @@ import USER_PHOTO from "../assets/images/userPhoto.jpg";
 import PostComponent from "../components/PostComponent";
 
 import IMG from "../assets/images/forest.jpg";
+import { Image } from "react-native";
 
 const PostsScreen = () => {
   return (
     <ScrollView style={{ flex: 1 }}>
       <View style={[globalStyles.container, styles.post]}>
         <View style={styles.profile}>
-          <Image />
+          <View style={styles.userPhoto}>
+            <Image source={USER_PHOTO} style={{ width: 60, height: 60 }} />
+          </View>
           <View>
             <Text style={styles.name}>Natali Romanova</Text>
             <Text style={styles.email}>email@example.com</Text>
@@ -57,16 +60,13 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     gap: 8,
-
+    alignItems: "center",
     marginBottom: 32,
   },
 
   userPhoto: {
-    width: 60,
-    height: 60,
-
-    backgroundColor: "#F6F6F6",
     borderRadius: 16,
+    backgroundColor: "#ffffff",
   },
 
   name: {

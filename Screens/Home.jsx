@@ -52,6 +52,7 @@ const Home = () => {
         headerStyle: {
           borderBottomWidth: 1,
         },
+        headerTitleStyle: styles.headerTitle,
       })}
     >
       <Tabs.Screen
@@ -73,7 +74,8 @@ const Home = () => {
         options={{
           title: "Створити публікацію",
           headerTitleAlign: "center",
-          headerRight: () => <ToBackComponent />,
+          headerShown: true,
+          headerLeft: () => <ToBackComponent />,
           headerStyle: {
             borderBottomWidth: 1,
           },
@@ -111,5 +113,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#FF6C00",
 
     borderRadius: 20,
+  },
+  headerTitle: {
+    color: "#212121",
+    fontSize: 17,
+    fontWeight: 500,
+    lineHeight: 22,
+    letterSpacing: -0.4,
+    fontFamily: "Roboto-Medium",
   },
 });
